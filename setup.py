@@ -10,7 +10,7 @@ from setuptools import setup
 
 version = re.search(
     '^__version__\s*=\s*"(.*)"',
-    open('bootstrap/bootstrap.py').read(),
+    open('morse/morse.py').read(),
     re.M
     ).group(1)
 
@@ -20,15 +20,15 @@ with open("README.rst", "rb") as f:
 
 
 setup(
-    name = "cmdline-bootstrap",
-    packages = ["bootstrap"],
+    name = "cmdline-morse",
+    packages = ["morse"],
     entry_points = {
-        "console_scripts": ['bootstrap = bootstrap.bootstrap:main']
+        "console_scripts": ['morse = morse.morse:main']
         },
     version = version,
-    description = "Python command line application bare bones template.",
+    description = "Morse code translator (python command line application)",
     long_description = long_descr,
-    author = "Jan-Philip Gehrcke",
-    author_email = "jgehrcke@googlemail.com",
-    url = "http://gehrcke.de/2014/02/distributing-a-python-command-line-application",
+    author = "Martín Alejandro Mednik",
+    author_email = "mmednik@gmail.com",
+    url = "https://github.com/mmednik/morse",
     )
