@@ -5,6 +5,8 @@
 __version__ = "0.1.0"
 
 import sys
+import time
+from pysinewave import SineWave
 
 code = {
     "a": ".-",
@@ -45,12 +47,26 @@ code = {
     "9": "----."
 }
 
+def beep(seconds):
+    sinewave = SineWave(pitch=9) # 440 Hz / A
+    sinewave.play()
+    time.sleep(seconds)
+    sinewave.stop()
+
 def toMorse(word):
     converted = ""
     for letter in word:
-        converted = converted + code[letter] + " "
+        morseLetter = code[letter]
+        converted = converted + morseLetter + " "
+        for char in morseLetter:
+            if(char=="-"):
+                beep(0.5)
+            else:
+                beep(0.25)
+        time.sleep(0.5)
     return converted
 
 def main():
     for word in sys.argv[1:]:
         print(toMorse(word), end="  ")
+        time.sleep(1)
