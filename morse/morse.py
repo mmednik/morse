@@ -60,13 +60,28 @@ def toMorse(word):
         converted = converted + morseLetter + " "
         for char in morseLetter:
             if(char=="-"):
-                beep(0.5)
+                beep(0.5/velocity)
             else:
-                beep(0.25)
-        time.sleep(0.5)
+                beep(0.25/velocity)
+        time.sleep(0.5/velocity)
     return converted
 
 def main():
-    for word in sys.argv[1:]:
+    global velocity
+    velocity = 1
+    words = []
+
+    for param in sys.argv[1:]:
+        if(param=="--1x"):
+            velocity = 1
+        elif(param=="--2x"):
+            velocity = 2
+        elif(param=="--3x"):
+            velocity = 3
+        else:
+            words.append(param)
+        
+
+    for word in words:
         print(toMorse(word), end="  ")
-        time.sleep(1)
+        time.sleep(1/velocity)
