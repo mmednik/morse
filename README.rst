@@ -3,6 +3,15 @@ morse
 
 **morse** is a command line tool that allows you to translate text into Morse code and play the corresponding sound for each letter.
 
+
+Installation
+------------
+
+Clone this repo and run the following command in the terminal:
+
+:code:`python setup.py install`
+
+
 Usage
 -----
 
