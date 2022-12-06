@@ -59,12 +59,13 @@ def toMorse(word):
         morseLetter = code[letter]
         converted = converted + morseLetter + " "
         for char in morseLetter:
+            print(char, end="", flush=True)
             if(char=="-"):
                 beep(0.5/velocity)
             else:
                 beep(0.25/velocity)
         time.sleep(0.5/velocity)
-    return converted
+        print(" ", end="", flush=True)
 
 def main():
     global velocity
@@ -83,5 +84,5 @@ def main():
         
 
     for word in words:
-        print(toMorse(word), end="  ")
+        toMorse(word)
         time.sleep(1/velocity)
