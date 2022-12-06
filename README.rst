@@ -17,6 +17,8 @@ The speed can be specified as **--1x**, **--2x** or **--3x**, where 1x is the st
 
 ### Examples:
 
-:code:`python morse hello world`
-:code:`python morse --2x hello world`
-:code:`python morse --3x hello world`
+:code:`morse hello world`
+
+:code:`morse --2x hello world`
+
+:code:`morse --3x hello world`
