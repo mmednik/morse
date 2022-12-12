@@ -24,7 +24,8 @@ where **speed** is the desired speed (optional) and text is the text you want to
 The speed can be specified as **--1x**, **--2x** or **--3x**, where 1x is the standard speed, 2x is twice the speed and 3x is three times the speed.
 
 
-### Examples:
+Examples
+--------
 
 :code:`morse hello world`
 
