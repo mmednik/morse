@@ -56,16 +56,18 @@ def beep(seconds):
 def toMorse(word):
     converted = ""
     for letter in word:
-        morseLetter = code[letter]
-        converted = converted + morseLetter + " "
-        for char in morseLetter:
-            print(char, end="", flush=True)
-            if(char=="-"):
-                beep(0.5/velocity)
-            else:
-                beep(0.25/velocity)
-        time.sleep(0.5/velocity)
-        print(" ", end="", flush=True)
+        letter = str.lower(letter)
+        if letter in code: 
+            morseLetter = code[letter]
+            converted = converted + morseLetter + " "
+            for char in morseLetter:
+                print(char, end="", flush=True)
+                if(char=="-"):
+                    beep(0.5/velocity)
+                else:
+                    beep(0.25/velocity)
+            time.sleep(0.5/velocity)
+            print(" ", end="", flush=True)
 
 def main():
     global velocity
